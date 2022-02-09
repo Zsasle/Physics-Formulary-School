@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.2.6)  10 FEB 2022 00:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.2.6)  10 FEB 2022 00:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -323,16 +323,8 @@ File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 \mhchem@option@minusmathsidebearingright=\dimen154
 \mhchem@option@minustextsidebearingleft=\dimen155
 \mhchem@option@minustextsidebearingright=\dimen156
-
-
-Package mhchem Warning: You did not specify a 'version' option for the mhchem
-(mhchem)                package. Please write \usepackage[version=4]{mhchem}
-(mhchem)                in your preamble (or any lower number for
-(mhchem)                compatibility mode), because you might get slightly
-(mhchem)                different output with the same input in future versions
-.
-
-) (/usr/local/texlive/2021/texmf-dist/tex/generic/chemfig/chemfig.sty
+)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/chemfig/chemfig.sty
 (/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/local/texlive/2021/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
@@ -1641,7 +1633,7 @@ Package rerunfilecheck Info: File `Physic_formulary.out' has not changed.
 Here is how much of TeX's memory you used:
  44940 strings out of 478287
  1053623 string characters out of 5846765
- 1595830 words of memory out of 5000000
+ 1595848 words of memory out of 5000000
  62375 multiletter control sequences out of 15000+600000
  483808 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
