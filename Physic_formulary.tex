@@ -1,0 +1,255 @@
+\documentclass[12pt, a4paper]{scrartcl}
+\sloppy
+\renewcommand{\familydefault}{\ttdefault}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+%\usepackage{ascii}
+\usepackage[OT1]{fontenc}
+\usepackage{tgbonum}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{amsfonts}
+\usepackage{array}
+\usepackage{mathrsfs}
+%\usepackage{physics}
+\usepackage{mhchem}
+\usepackage{chemfig}
+\usepackage{ulem}
+\usepackage{romannum}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{xparse}
+\usepackage{tabularx}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\sisetup{
+	%scientific-notation = engineering,
+	%locale = EN,
+	per-mode = fraction,
+	separate-uncertainty = true
+}
+\DeclareSIUnit\clight{{\mathrm{c}_{\text{0}}}}
+\DeclareSIUnit\atomicmassunit{\mathrm{u}}
+\usepackage{framed}
+\usepackage{xcolor}
+\usepackage{pgfplots, pgfplotstable}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{microtype}
+\usepackage{subfigure}
+\bibliographystyle{unsrt}
+\usepackage{imakeidx}
+\usepackage{url}
+\usepackage{tabulary}
+\usepackage{overcite}
+\usepackage{hyperref}
+\usepackage{blindtext}
+\usepackage{tikz}
+\setlength{\headheight}{1,5cm}
+\usepackage{geometry}
+\geometry{hmargin=2cm, vmargin=3.5cm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{titlesec}
+\usepackage{bold-extra}
+\titleformat{\section}{\ttfamily\bfseries\Large}{\thesection}{1em}{}
+\titleformat{\subsection}{\ttfamily\bfseries\large}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\ttfamily\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}{\ttfamily\bfseries}{\theparagraph}{1em}{}
+
+\setlength\extrarowheight{8pt}
+\newenvironment{formulatable}{%
+	\center%
+	\tabularx{\textwidth}{>{\hsize = 1.5\hsize\raggedleft\begin{math}}X<{\end{math}} @{{}$ \: = \: ${}} >{\hsize = 0.75\hsize\begin{math}}X<{\end{math}} >{\hsize = 0.75\hsize}X}
+}{%
+	\endtabularx%
+	\endcenter%
+}
+\newcommand{\headingformulatable}[1]{\multicolumn{3}{c}{#1}\\}
+
+\makeindex[intoc]
+
+\title{\Large{\textbf{Physic formulary}}}
+\author{School}
+\date{05.02.2022}
+
+\begin{document}
+\begin{titlepage}
+\pagenumbering{Roman}
+
+\maketitle
+\thispagestyle{empty}
+\end{titlepage}
+
+\newpage
+\lhead{School}
+\chead{Physic formulary}
+\rhead{05.02.2022}
+
+\tableofcontents
+
+\newpage
+
+\pagenumbering{arabic}
+\section{Constants}
+\begin{tabularx}{\textwidth}{l l @{{} $ \: = \: $ {}}X}
+	Bohr radius\index{Bohr radius}			&	$a_{\text{0}}$		& \begin{math} \frac{4\pi \varepsilon_{\text{0}}\hbar^{2}}{m_{\text{e}}e^{2}} = \frac{\varepsilon_{\text{0}}h^{2}}{\pi m_{\text{e}}e^{2}} = \frac {\hbar }{m_{\text{e}}c\alpha} \* = \qty{5.29177210903e-11}{\metre} \end{math}\\
+	Velocity of light\index{Light}:			&	$\unit{\clight}$	& $\qty{299792458}		{\meter\per\second}$\\
+	Elementary charge:				&	$e$			& $\qty{1.602176634e-19}	{\coulomb}$\\
+	Vacuum permittivity:				&	$\varepsilon_\text{0}$
+											& $\qty{8.8541878128e-12}	{\farad\per\metre}$\\
+	Permittivity of air:				&	$\varepsilon_\text{r}$
+											& $\qty{1.00059}		{}$\\
+	Faraday constant{\index{Faraday constant}}	&	$F$			& $\qty{96485.3321233}	{\coulomb\per\mole}$\\
+	Acceleration due to gravity:			&	$g$			& $\qty{9.80665}		{\metre\per\square\second}$\\
+	Gravitational constant\index{Gravitation!Gravitational constant}:
+							&	$G$			& $\qty{6.67430e-11}		{\cubic\meter\per\kilogram\per\square\second}$\\
+	Planck constant\index{Plank constant}:		&	$h$			& $\qty{6.62607015e-34}	{\joule\per\hertz}$\\
+	\multirow{2}{*}{Electron\index{Electron} mass:}	&	$m_\text{e}$		& $\qty{9.1093837015e-31}	{\kilogram}$\\
+							&	$m_\text{e}$		& $\qty{0.51099895000}	{\mega\electronvolt\per\square\clight}$\\
+	\multirow{3}{*}{Muon\index{Elemtary particle!Leptons!Muon} mass:}
+							&	$m_{\text{$\mu$}}$	& $\qty{1.883531627e-28}{\kilogram}$\\
+							&	$m_{\text{$\mu$}}$	& $\qty{105.6583755}{\mega\electronvolt\per\square\clight}$\\
+							&	$m_{\text{$\mu$}}$	& $\qty{0.1134289259}{\dalton}$\\
+	\multirow{2}{*}{Neutron mass:}			&	$m_\text{n}$		& $\qty{1.67492749804e-27}	{\kilogram}$\\
+							&	$m_\text{n}$		& $\qty{939.56542052}		{\mega\electronvolt\per\square\clight}$\\
+	\multirow{2}{*}{Proton mass:}			&	$m_\text{p}$		& $\qty{1.67262192369e-27}	{\kilogram}$\\
+							&	$m_\text{p}$		& $\qty{938.27208816}		{\mega\electronvolt\per\square\clight}$\\
+	Vacuum permeability:				&	$\mu_\text{0}$		& $\qty{1.25663706212e-6}	{\henry\per\metre}$\\
+	Permeability of air:				&	$\mu_\text{r}$		& $\qty{1.00000037}		{}$\\
+\end{tabularx}
+
+\newpage
+\section{Other physical interrelationships}
+\begin{tabular}{lll}
+	Visible spectrum:				& \multicolumn{2}{l}{$ \qtyrange{380}{750}{\nano\metre}$}\\
+	Speed of sound under standart conditions:	& \multicolumn{2}{l}{$ \qty{343}{\metre\per\second}$}\\
+	Dalton $\si{\dalton}$ / unified atomic mass unit $\unit{\atomicmassunit}$:
+				&	$\unit{\dalton}/\unit{\atomicmassunit}$	& $= \qty{1.66053906660e-27}	{\kilo\gram}$\\
+	Hydrogen mass:					&	$m_\text{H}$	& $= \qtyrange{1.00784}{1.00811}{\dalton}$\\
+	Atomic mass of helium $\ce{^{4}He}$		&	$m_\text{He}$	& $= \qty{4.002603254}		{\dalton}$\\
+	\multirow{2}{*}{Alternate energy units:}	&	$\mathrm{kW \, h}$
+										& $= \qty{3.6e6}		{\joule}$\\
+							&	$\unit{\electronvolt}$
+										& $= \qty{1.602176634e-19}{\joule}$\\
+	\multirow{2}{*}{Pressure:}			&	$\qty{1}{\pascal}$
+										& $= \qty{1}{\newton\per\square\metre}$\\
+							&	$\qty{1}{\bar}$	& $= \qty{e5}{\pascal}$\\
+	Absolute zero:					&	$\qty{-273.15}{\degreeCelsius}$
+										& $= \qty{0}{\kelvin}$\\
+\end{tabular}
+
+\newpage
+\section{Energy}
+\begin{formulatable}
+	\hline
+	\headingformulatable{Kinetic Energy\index{Energy!Kinetic Energy}}
+	\hline
+	E_{\text{k}}	& \frac{1}{2} m v^{2} & ~\\
+	\headingformulatable{}
+	\headingformulatable{Potential Energy\index{Energy!Potential Energy}}
+	\hline
+	U		& \multicolumn{2}{l}{$\begin{cases}
+		m g h		& \quad \text{(gravitational)}\\
+		\frac{1}{2} \cdot k \cdot x^{2}
+					& \quad \text{(elastic)}\\
+		\frac{1}{2} \cdot C \cdot V^{2}
+					& \quad \text{(electric)}\\
+		-m B			& \quad \text{(magnetic)}\\
+		\int F(r) \, dr		& \quad \text{(general)}
+	\end{cases}$}\\
+	\hline
+\end{formulatable}
+
+\section{Motion}
+\begin{formulatable}
+	\hline
+	\multicolumn{3}{c}{uniform linear motion}\\
+	\hline
+	s(t)		& v t \, \left( \, + s_{\text{0}} \, \right)	& ~\\
+	v(t)		& const.					& ~\\
+	a(t)		& 0\\
+	\multicolumn{3}{c}{}\\
+	\multicolumn{3}{c}{\text{non-uniform linear motion}}\\
+	\hline
+	s(t)		& \frac{1}{2} a t^{2} \left(\, + v_{\text{0}} \, t + s_{\text{0}} \, \right)
+									& ~\\
+	v(t)		& a t \, \left( \, + v_{\text{0}} \, \right)	& ~\\
+	a(t)		& const.					& ~\\
+	\multicolumn{3}{c}{}\\
+	\multicolumn{3}{c}{\text{Circular motion}}\\
+	\hline
+	F_{\text{Z}}	& \frac{m v^{2}}{r} = m \, \omega^{2} r		& ~\\
+	\omega		& \frac{v}{r} = \frac{2\pi}{T} = \frac{\Delta\varphi}{\Delta t}
+									& $\varphi$ in rad\\
+	f		& \frac{1}{T}					& ~\\
+	\hline
+\end{formulatable}
+
+\section{Momentum}
+\begin{formulatable}
+	\hline
+	\multicolumn{3}{c}{momentum itself}\\
+	\hline
+	\vec{p}		
+			& m \vec{v} & ~\\
+	~		& {\frac{\hbar}{\lambda}}		& \quad photons\\
+	~		& \sqrt{m_{\text{0}}^{2} \unit{\square\clight} + \frac{E^{2}}{\unit{\square\clight}}}
+							& \quad general\\
+	\multicolumn{3}{c}{}\\
+	\hline
+	\multicolumn{3}{c}{relations to momentum}\\
+	\hline
+	\sum_{i} m_{i} \, u_{i} & \sum_{i} m_{i} \, v_{i}	& conservation of momentum\\
+	\Delta p	& F \Delta t & ~\\
+	E_{\text{k}}	& \int p \, dv & ~\\
+\end{formulatable}
+\section{Electricity}
+\begin{formulatable}
+	\hline
+	\multicolumn{3}{c}{General}\\
+	\hline
+	I		& \frac{\Delta Q}{\Delta t} = \frac{\partial Q}{\partial t} = \dot Q & in \unit{\ampere}\\
+	R		& \frac{U}{I} = \rho \frac{l}{A} & in \unit{\ohm}\\
+	E		& U \cdot Q &~\\
+	P		& \frac{\Delta E}{\Delta t} = U I & in \unit{\watt} Energy flow / "Power"\\
+\end{formulatable}
+
+\newpage
+\section{Fields}
+\subsection{Newtonian gravitation\index{Gravitation}}
+\begin{formulatable}
+	\hline
+	\multicolumn{3}{c}{Homogeneous field\index{Gravitation!Homogeneous Field}}\\
+	\hline
+	E		& mgh							& ~\\
+	\vec{F_{g}}	& m \vec{g}						& ~\\
+	\vec{g}		& \frac{\vec{F_{g}}}{m}					& ~\\
+	\Delta \varphi	& \frac{E}{m} = gh					& ~\\
+	\multicolumn{3}{c}{}\\
+	\hline
+	\multicolumn{3}{c}{Radial symmetric field\index{Gravitation!Radial symmetric field}}\\
+	\hline
+	U		& G Mm \left( \frac{1}{r_{1}} - \frac{1}{r_{2}} \right)
+										& ~\\
+	U		& - G Mm \frac{1}{r}				& for $r_{1} \to \infty$\\
+	\vec{F_{g}}	& - G \frac{Mm}{r^{2}} \hat{r}			& ~\\
+	\vec{g}		& \frac{\vec{F_{g}}}{m} = -G \frac{M}{r_{2}} \hat r\\
+	\Delta \varphi	& \frac{E}{m} = \gamma M \left( \frac{1}{r_{1}} - \frac{1}{r_{2}} \right)
+												& ~\\
+\end{formulatable}
+\subsection{Electromagnetism}
+\begin{formulatable}
+	\hline
+	\headingformulatable{homogenous field}
+	\hline
+	E		& q \left\vert \vec{E} \right\vert d & ~\\
+\end{formulatable}
+
+%\pagenumbering{Roman}
+%\setcounter{page}{3}
+\printindex
+
+\end{document}
