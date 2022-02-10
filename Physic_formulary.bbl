@@ -1,0 +1,59 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global}
+    \entry{NIST-Reference}{online}{}
+      \name{author}{2}{}{%
+        {{hash=b288df42d4dc986c0772bc88b8067e18}{%
+           family={Standards},
+           familyi={S\bibinitperiod},
+           given={National\bibnamedelima Institute},
+           giveni={N\bibinitperiod\bibinitdelim I\bibinitperiod},
+           prefix={for},
+           prefixi={f\bibinitperiod}}}%
+        {{hash=e7e767d7c0e58b16e57d3ab16150db80}{%
+           family={Technology},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{3bfead6b70ee188a7a470a8d00884ceb}
+      \strng{fullhash}{3bfead6b70ee188a7a470a8d00884ceb}
+      \strng{bibnamehash}{3bfead6b70ee188a7a470a8d00884ceb}
+      \strng{authorbibnamehash}{3bfead6b70ee188a7a470a8d00884ceb}
+      \strng{authornamehash}{3bfead6b70ee188a7a470a8d00884ceb}
+      \strng{authorfullhash}{3bfead6b70ee188a7a470a8d00884ceb}
+      \field{labelalpha}{ST}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{accessed: 2022.02.10}
+      \field{title}{Fundamental Physical Constants}
+      \verb{urlraw}
+      \verb https://physics.nist.gov/cuu/Constants/index.html
+      \endverb
+      \verb{url}
+      \verb https://physics.nist.gov/cuu/Constants/index.html
+      \endverb
+      \keyw{NIST-Reference}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

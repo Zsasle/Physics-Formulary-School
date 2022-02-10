@@ -8,5 +8,5 @@
 \contentsline {section}{\numberline {7}Fields}{5}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Newtonian gravitation}{5}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}Electromagnetism}{5}{subsection.7.2}%
-\contentsline {section}{Index}{6}{section*.1}%
+\contentsline {section}{Complete bibliography}{6}{subsection.7.2}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

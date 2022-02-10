@@ -43,7 +43,13 @@
 \usepackage{imakeidx}
 \usepackage{url}
 \usepackage{tabulary}
-\usepackage{overcite}
+\usepackage[
+%backend=biber,
+style=alphabetic,
+%sorting=ynt
+]{biblatex}
+\addbibresource{Physic_formulary.bib}
+%\usepackage{overcite}
 \usepackage{hyperref}
 \usepackage{blindtext}
 \usepackage{tikz}
@@ -250,6 +256,9 @@
 
 %\pagenumbering{Roman}
 %\setcounter{page}{3}
-\printindex
+%\printindex
+\newpage
+\nocite{NIST-Reference}
+\printbibliography[heading=bibintoc, title={Complete bibliography}]
 
 \end{document}
