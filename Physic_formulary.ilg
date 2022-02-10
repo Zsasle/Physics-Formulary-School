@@ -1,4 +1,10 @@
 This is makeindex, version 2.15 [TeX Live 2019] (kpathsea + Thai support).
+Scanning style file ./Physic_formulary.ist.
+** Input style error (file = ./Physic_formulary.ist, line = 2):
+   -- Unknown specifier headings_prefix.
+** Input style error (file = ./Physic_formulary.ist, line = 3):
+   -- Unknown specifier headings_suffix.
+...done (4 attributes redefined, 2 ignored).
 Scanning input file Physic_formulary.idx....done (12 entries accepted, 0 rejected).
 Sorting entries....done (46 comparisons).
 Generating output file Physic_formulary.ind....done (34 lines written, 0 warnings).

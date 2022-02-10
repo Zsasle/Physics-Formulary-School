@@ -41,7 +41,7 @@
   >
 ]>
 <requests version="1.0">
-  <internal package="biblatex" priority="9" active="1">
+  <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
       <file>Physic_formulary.bcf</file>
@@ -54,8 +54,11 @@
       <file>blx-compat.def</file>
       <file>biblatex.def</file>
       <file>standard.bbx</file>
-      <file>alphabetic.bbx</file>
-      <file>alphabetic.cbx</file>
+      <file>numeric.bbx</file>
+      <file>numeric-comp.bbx</file>
+      <file>nature.bbx</file>
+      <file>numeric-comp.cbx</file>
+      <file>nature.cbx</file>
       <file>biblatex.cfg</file>
       <file>english.lbx</file>
     </requires>

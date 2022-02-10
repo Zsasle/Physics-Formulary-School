@@ -1,6 +1,7 @@
 \documentclass[12pt, a4paper]{scrartcl}
 \sloppy
 \renewcommand{\familydefault}{\ttdefault}
+\newcommand{\defaultfamily}{\ttfamily}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 %\usepackage{ascii}
@@ -44,11 +45,28 @@
 \usepackage{url}
 \usepackage{tabulary}
 \usepackage[
-%backend=biber,
-style=alphabetic,
-%sorting=ynt
+backend=biber,
+style = nature,
+sorting=ynt
 ]{biblatex}
 \addbibresource{Physic_formulary.bib}
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+\renewbibmacro*{title}{%
+	\ifboolexpr{
+		test {\iffieldundef{title}}
+		and
+		test {\iffieldundef{subtitle}}
+	}
+	{}
+	{\printtext{%
+		\printtext[titlecase]{\usefield{\uline}{title}}%
+		\setunit{\subtitlepunct}%
+		\printfield[titlecase]{subtitle}}%
+		\newunit%
+	}%
+	\printfield{titleaddon}%
+}
 %\usepackage{overcite}
 \usepackage{hyperref}
 \usepackage{blindtext}
@@ -60,22 +78,27 @@ style=alphabetic,
 \pagestyle{fancy}
 \usepackage{titlesec}
 \usepackage{bold-extra}
-\titleformat{\section}{\ttfamily\bfseries\Large}{\thesection}{1em}{}
-\titleformat{\subsection}{\ttfamily\bfseries\large}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}{\ttfamily\bfseries}{\thesubsubsection}{1em}{}
-\titleformat{\paragraph}{\ttfamily\bfseries}{\theparagraph}{1em}{}
+\titleformat{\section}{\defaultfamily\bfseries\Large}{\thesection}{1em}{}
+\titleformat{\subsection}{\defaultfamily\bfseries\large}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\defaultfamily\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}{\defaultfamily\bfseries}{\theparagraph}{1em}{}
 
-\setlength\extrarowheight{8pt}
+%\setlength\extrarowheight{8pt}
 \newenvironment{formulatable}{%
 	\center%
-	\tabularx{\textwidth}{>{\hsize = 1.5\hsize\raggedleft\begin{math}}X<{\end{math}} @{{}$ \: = \: ${}} >{\hsize = 0.75\hsize\begin{math}}X<{\end{math}} >{\hsize = 0.75\hsize}X}
+	\tabularx{\textwidth}{%
+		>{\hsize = 1.5\hsize\raggedleft\begin{math}} X <{\end{math}}%
+		@{{}$ \: = \: ${}}%
+		>{\hsize = 0.75\hsize\begin{math}} X <{\end{math}}%
+		>{\hsize = 0.75\hsize}X%
+	}%
 }{%
 	\endtabularx%
 	\endcenter%
 }
 \newcommand{\headingformulatable}[1]{\multicolumn{3}{c}{#1}\\}
 
-\makeindex[intoc]
+\makeindex[intoc = true, options = {-s Physic_formulary.ist}]
 
 \title{\Large{\textbf{Physic formulary}}}
 \author{School}
@@ -86,7 +109,7 @@ style=alphabetic,
 \pagenumbering{Roman}
 
 \maketitle
-\thispagestyle{empty}
+%\thispagestyle{empty}
 \end{titlepage}
 
 \newpage
@@ -150,13 +173,13 @@ style=alphabetic,
 \newpage
 \section{Energy}
 \begin{formulatable}
-	\hline
+	\toprule
 	\headingformulatable{Kinetic Energy\index{Energy!Kinetic Energy}}
-	\hline
+	\midrule
 	E_{\text{k}}	& \frac{1}{2} m v^{2} & ~\\
 	\headingformulatable{}
 	\headingformulatable{Potential Energy\index{Energy!Potential Energy}}
-	\hline
+	\midrule
 	U		& \multicolumn{2}{l}{$\begin{cases}
 		m g h		& \quad \text{(gravitational)}\\
 		\frac{1}{2} \cdot k \cdot x^{2}
@@ -166,57 +189,57 @@ style=alphabetic,
 		-m B			& \quad \text{(magnetic)}\\
 		\int F(r) \, dr		& \quad \text{(general)}
 	\end{cases}$}\\
-	\hline
+	\bottomrule
 \end{formulatable}
 
 \section{Motion}
 \begin{formulatable}
-	\hline
+	\toprule
 	\multicolumn{3}{c}{uniform linear motion}\\
-	\hline
+	\midrule
 	s(t)		& v t \, \left( \, + s_{\text{0}} \, \right)	& ~\\
 	v(t)		& const.					& ~\\
 	a(t)		& 0\\
 	\multicolumn{3}{c}{}\\
 	\multicolumn{3}{c}{\text{non-uniform linear motion}}\\
-	\hline
+	\midrule
 	s(t)		& \frac{1}{2} a t^{2} \left(\, + v_{\text{0}} \, t + s_{\text{0}} \, \right)
 									& ~\\
 	v(t)		& a t \, \left( \, + v_{\text{0}} \, \right)	& ~\\
 	a(t)		& const.					& ~\\
 	\multicolumn{3}{c}{}\\
 	\multicolumn{3}{c}{\text{Circular motion}}\\
-	\hline
+	\midrule
 	F_{\text{Z}}	& \frac{m v^{2}}{r} = m \, \omega^{2} r		& ~\\
 	\omega		& \frac{v}{r} = \frac{2\pi}{T} = \frac{\Delta\varphi}{\Delta t}
 									& $\varphi$ in rad\\
 	f		& \frac{1}{T}					& ~\\
-	\hline
+	\bottomrule
 \end{formulatable}
 
 \section{Momentum}
 \begin{formulatable}
-	\hline
+	\toprule
 	\multicolumn{3}{c}{momentum itself}\\
-	\hline
+	\midrule
 	\vec{p}		
 			& m \vec{v} & ~\\
 	~		& {\frac{\hbar}{\lambda}}		& \quad photons\\
 	~		& \sqrt{m_{\text{0}}^{2} \unit{\square\clight} + \frac{E^{2}}{\unit{\square\clight}}}
 							& \quad general\\
 	\multicolumn{3}{c}{}\\
-	\hline
+	\midrule
 	\multicolumn{3}{c}{relations to momentum}\\
-	\hline
+	\midrule
 	\sum_{i} m_{i} \, u_{i} & \sum_{i} m_{i} \, v_{i}	& conservation of momentum\\
 	\Delta p	& F \Delta t & ~\\
 	E_{\text{k}}	& \int p \, dv & ~\\
 \end{formulatable}
 \section{Electricity}
 \begin{formulatable}
-	\hline
+	\toprule
 	\multicolumn{3}{c}{General}\\
-	\hline
+	\midrule
 	I		& \frac{\Delta Q}{\Delta t} = \frac{\partial Q}{\partial t} = \dot Q & in \unit{\ampere}\\
 	R		& \frac{U}{I} = \rho \frac{l}{A} & in \unit{\ohm}\\
 	E		& U \cdot Q &~\\
@@ -227,17 +250,17 @@ style=alphabetic,
 \section{Fields}
 \subsection{Newtonian gravitation\index{Gravitation}}
 \begin{formulatable}
-	\hline
+	\toprule
 	\multicolumn{3}{c}{Homogeneous field\index{Gravitation!Homogeneous Field}}\\
-	\hline
+	\midrule
 	E		& mgh							& ~\\
 	\vec{F_{g}}	& m \vec{g}						& ~\\
 	\vec{g}		& \frac{\vec{F_{g}}}{m}					& ~\\
 	\Delta \varphi	& \frac{E}{m} = gh					& ~\\
 	\multicolumn{3}{c}{}\\
-	\hline
+	\midrule
 	\multicolumn{3}{c}{Radial symmetric field\index{Gravitation!Radial symmetric field}}\\
-	\hline
+	\midrule
 	U		& G Mm \left( \frac{1}{r_{1}} - \frac{1}{r_{2}} \right)
 										& ~\\
 	U		& - G Mm \frac{1}{r}				& for $r_{1} \to \infty$\\
@@ -248,17 +271,15 @@ style=alphabetic,
 \end{formulatable}
 \subsection{Electromagnetism}
 \begin{formulatable}
-	\hline
+	\toprule
 	\headingformulatable{homogenous field}
-	\hline
+	\midrule
 	E		& q \left\vert \vec{E} \right\vert d & ~\\
 \end{formulatable}
 
-%\pagenumbering{Roman}
-%\setcounter{page}{3}
-%\printindex
+\printindex
 \newpage
 \nocite{NIST-Reference}
-\printbibliography[heading=bibintoc, title={Complete bibliography}]
+{\raggedright\printbibliography[heading=bibintoc, title={Bibliography}]}
 
 \end{document}

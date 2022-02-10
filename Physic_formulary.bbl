@@ -18,33 +18,23 @@
 
 
 \refsection{0}
-  \datalist[entry]{anyt/global//global/global}
-    \entry{NIST-Reference}{online}{}
-      \name{author}{2}{}{%
-        {{hash=b288df42d4dc986c0772bc88b8067e18}{%
-           family={Standards},
-           familyi={S\bibinitperiod},
-           given={National\bibnamedelima Institute},
-           giveni={N\bibinitperiod\bibinitdelim I\bibinitperiod},
-           prefix={for},
-           prefixi={f\bibinitperiod}}}%
-        {{hash=e7e767d7c0e58b16e57d3ab16150db80}{%
-           family={Technology},
-           familyi={T\bibinitperiod}}}%
+  \datalist[entry]{ynt/global//global/global}
+    \entry{NIST-Reference}{misc}{}
+      \list{publisher}{2}{%
+        {National Institute for Standards}%
+        {Technology}%
       }
-      \strng{namehash}{3bfead6b70ee188a7a470a8d00884ceb}
-      \strng{fullhash}{3bfead6b70ee188a7a470a8d00884ceb}
-      \strng{bibnamehash}{3bfead6b70ee188a7a470a8d00884ceb}
-      \strng{authorbibnamehash}{3bfead6b70ee188a7a470a8d00884ceb}
-      \strng{authornamehash}{3bfead6b70ee188a7a470a8d00884ceb}
-      \strng{authorfullhash}{3bfead6b70ee188a7a470a8d00884ceb}
-      \field{labelalpha}{ST}
-      \field{sortinit}{S}
-      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
-      \field{labelnamesource}{author}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labeltitlesource}{title}
-      \field{addendum}{accessed: 2022.02.10}
-      \field{title}{Fundamental Physical Constants}
+      \field{month}{5}
+      \field{title}{CODATA Internationally recommended 2018 values of the Fundamental Physical Constants}
+      \field{urlday}{10}
+      \field{urlmonth}{2}
+      \field{urlyear}{2022}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://physics.nist.gov/cuu/Constants/index.html
       \endverb
