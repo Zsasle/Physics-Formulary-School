@@ -88,6 +88,7 @@ sorting=ynt
 \titleformat{\paragraph}{\defaultfamily\bfseries}{\theparagraph}{1em}{}
 
 %\setlength\extrarowheight{8pt}
+\renewcommand{\arraystretch}{1.25}
 \newenvironment{formulatable}{%
 	\center%
 	\tabularx{\textwidth}{%
@@ -100,7 +101,7 @@ sorting=ynt
 	\endtabularx%
 	\endcenter%
 }
-\newcommand{\headingformulatable}[1]{\multicolumn{3}{c}{#1}\\}
+\newcommand{\formulatableheading}[1]{\multicolumn{3}{c}{#1}\\}
 
 \makeindex[intoc = true, options = {-s Physic_formulary.ist}]
 
@@ -178,21 +179,19 @@ sorting=ynt
 \section{Energy}
 \begin{formulatable}
 	\toprule
-	\headingformulatable{Kinetic Energy\index{Energy!Kinetic Energy}}
+	\formulatableheading{Kinetic Energy\index{Energy!Kinetic Energy}}
 	\midrule
 	E_{\text{k}}	& \frac{1}{2} m v^{2} & ~\\
-	\headingformulatable{}
-	\headingformulatable{Potential Energy\index{Energy!Potential Energy}}
+	\formulatableheading{}
+	\formulatableheading{Potential Energy\index{Energy!Potential Energy}}
 	\midrule
-	U		& \multicolumn{2}{l}{$\begin{cases}
-		m g h		& \quad \text{(gravitational)}\\
-		\frac{1}{2} \cdot k \cdot x^{2}
-					& \quad \text{(elastic)}\\
-		\frac{1}{2} \cdot C \cdot V^{2}
-					& \quad \text{(electric)}\\
-		-m B			& \quad \text{(magnetic)}\\
-		\int F(r) \, dr		& \quad \text{(general)}
-	\end{cases}$}\\
+	U		&	m g h		& (gravitational)\\
+	U 		&	\frac{1}{2} \cdot k \cdot x^{2}
+						& (elastic)\\
+	U		&	\frac{1}{2} \cdot C \cdot V^{2}
+						& (electric)\\
+	U		&	-m B		& (magnetic)\\
+	U		&	\int F(r) \, dr	& (general)\\
 	\bottomrule
 \end{formulatable}
 
@@ -226,16 +225,15 @@ sorting=ynt
 	\toprule
 	\multicolumn{3}{c}{momentum itself}\\
 	\midrule
-	\vec{p}		
-			& m \vec{v} & ~\\
-	~		& {\frac{\hbar}{\lambda}}		& \quad photons\\
-	~		& \sqrt{m_{\text{0}}^{2} \unit{\square\clight} + \frac{E^{2}}{\unit{\square\clight}}}
-							& \quad general\\
+	\vec{p}		& m \vec{v} & ~\\
+	\vec{p}		& {\frac{\hbar}{\lambda}}			& \quad photons\\
+	\vec{p}		& \sqrt{m_{\text{0}}^{2} \unit{\square\clight} + \frac{E^{2}}{\unit{\square\clight}}}
+									& \quad general\\
 	\multicolumn{3}{c}{}\\
 	\midrule
 	\multicolumn{3}{c}{relations to momentum}\\
 	\midrule
-	\sum_{i} m_{i} \, u_{i} & \sum_{i} m_{i} \, v_{i}	& conservation of momentum\\
+	\sum_{i} m_{i} \, u_{i} & \sum_{i} m_{i} \, v_{i}		& conservation of momentum\\
 	\Delta p	& F \Delta t & ~\\
 	E_{\text{k}}	& \int p \, dv & ~\\
 \end{formulatable}
@@ -245,9 +243,9 @@ sorting=ynt
 	\multicolumn{3}{c}{General}\\
 	\midrule
 	I		& \frac{\Delta Q}{\Delta t} = \frac{\partial Q}{\partial t} = \dot Q & in \unit{\ampere}\\
-	R		& \frac{U}{I} = \rho \frac{l}{A} & in \unit{\ohm}\\
-	E		& U \cdot Q &~\\
-	P		& \frac{\Delta E}{\Delta t} = U I & in \unit{\watt} Energy flow / "Power"\\
+	R		& \frac{U}{I} = \rho \frac{l}{A}		& in \unit{\ohm}\\
+	E		& U \cdot Q					&~\\
+	P		& \frac{\Delta E}{\Delta t} = U I		& in \unit{\watt} Energy flow / "Power"\\
 \end{formulatable}
 
 \newpage
@@ -257,33 +255,31 @@ sorting=ynt
 	\toprule
 	\multicolumn{3}{c}{Homogeneous field\index{Gravitation!Homogeneous Field}}\\
 	\midrule
-	E		& mgh							& ~\\
-	\vec{F_{g}}	& m \vec{g}						& ~\\
-	\vec{g}		& \frac{\vec{F_{g}}}{m}					& ~\\
-	\Delta \varphi	& \frac{E}{m} = gh					& ~\\
+	E		& mgh						& ~\\
+	\vec{F_{g}}	& m \vec{g}					& ~\\
+	\vec{g}		& \frac{\vec{F_{g}}}{m}				& ~\\
+	\Delta \varphi	& \frac{E}{m} = gh				& ~\\
 	\multicolumn{3}{c}{}\\
 	\midrule
 	\multicolumn{3}{c}{Radial symmetric field\index{Gravitation!Radial symmetric field}}\\
 	\midrule
 	U		& G Mm \left( \frac{1}{r_{1}} - \frac{1}{r_{2}} \right)
-										& ~\\
+									& ~\\
 	U		& - G Mm \frac{1}{r}				& for $r_{1} \to \infty$\\
 	\vec{F_{g}}	& - G \frac{Mm}{r^{2}} \hat{r}			& ~\\
 	\vec{g}		& \frac{\vec{F_{g}}}{m} = -G \frac{M}{r_{2}} \hat r\\
 	\Delta \varphi	& \frac{E}{m} = \gamma M \left( \frac{1}{r_{1}} - \frac{1}{r_{2}} \right)
-												& ~\\
+									& ~\\
 \end{formulatable}
 \subsection{Electromagnetism}
 \begin{formulatable}
 	\toprule
-	\headingformulatable{homogenous field}
+	\formulatableheading{homogenous field}
 	\midrule
 	E		& q \left\vert \vec{E} \right\vert d & ~\\
 \end{formulatable}
 
 \printindex
-%\pagenumbering{Roman}
-%\setcounter{page}{3}
 \newpage
 \nocite{NIST-Reference}
 {\raggedright\printbibliography[heading=bibintoc, title={Bibliography}]}
