@@ -136,17 +136,18 @@ sorting=ynt
 											& $\qty{8.8541878128e-12}	{\farad\per\metre}$\\
 	Permittivity of air:				&	$\varepsilon_\text{r}$
 											& $\qty{1.00059}		{}$\\
-	Faraday constant{\index{Faraday constant}}	&	$F$			& $\qty{96485.3321233}	{\coulomb\per\mole}$\\
+	Faraday constant{\index{Faraday constant}}	&	$F$			& $\qty{96485.3321233}		{\coulomb\per\mole}$\\
 	Acceleration due to gravity:			&	$g$			& $\qty{9.80665}		{\metre\per\square\second}$\\
 	Gravitational constant\index{Gravitation!Gravitational constant}:
 							&	$G$			& $\qty{6.67430e-11}		{\cubic\meter\per\kilogram\per\square\second}$\\
-	Planck constant\index{Plank constant}:		&	$h$			& $\qty{6.62607015e-34}	{\joule\per\hertz}$\\
+	Planck constant\index{Plank constant}:		&	$h$			& $\qty{6.62607015e-34}		{\joule\per\hertz}$\\
+	Boltzmann constant\index{Boltzmann constant}:	&	$k$			& $\qty{1.280649e-23}		{\joule\per\kelvin}$\\
 	\multirow{2}{*}{Electron\index{Electron} mass:}	&	$m_\text{e}$		& $\qty{9.1093837015e-31}	{\kilogram}$\\
-							&	$m_\text{e}$		& $\qty{0.51099895000}	{\mega\electronvolt\per\square\clight}$\\
+							&	$m_\text{e}$		& $\qty{0.51099895000}		{\mega\electronvolt\per\square\clight}$\\
 	\multirow{3}{*}{Muon\index{Elemtary particle!Leptons!Muon} mass:}
-							&	$m_{\text{$\mu$}}$	& $\qty{1.883531627e-28}{\kilogram}$\\
-							&	$m_{\text{$\mu$}}$	& $\qty{105.6583755}{\mega\electronvolt\per\square\clight}$\\
-							&	$m_{\text{$\mu$}}$	& $\qty{0.1134289259}{\dalton}$\\
+							&	$m_{\text{$\mu$}}$	& $\qty{1.883531627e-28}	{\kilogram}$\\
+							&	$m_{\text{$\mu$}}$	& $\qty{105.6583755}		{\mega\electronvolt\per\square\clight}$\\
+							&	$m_{\text{$\mu$}}$	& $\qty{0.1134289259}		{\dalton}$\\
 	\multirow{2}{*}{Neutron mass:}			&	$m_\text{n}$		& $\qty{1.67492749804e-27}	{\kilogram}$\\
 							&	$m_\text{n}$		& $\qty{939.56542052}		{\mega\electronvolt\per\square\clight}$\\
 	\multirow{2}{*}{Proton mass:}			&	$m_\text{p}$		& $\qty{1.67262192369e-27}	{\kilogram}$\\
@@ -226,9 +227,9 @@ sorting=ynt
 	\multicolumn{3}{c}{momentum itself}\\
 	\midrule
 	\vec{p}		& m \vec{v} & ~\\
-	\vec{p}		& {\frac{\hbar}{\lambda}}			& \quad photons\\
+	\vec{p}		& {\frac{\hbar}{\lambda}}			& photons\\
 	\vec{p}		& \sqrt{m_{\text{0}}^{2} \unit{\square\clight} + \frac{E^{2}}{\unit{\square\clight}}}
-									& \quad general\\
+									& general\\
 	\multicolumn{3}{c}{}\\
 	\midrule
 	\multicolumn{3}{c}{relations to momentum}\\
@@ -276,7 +277,21 @@ sorting=ynt
 	\toprule
 	\formulatableheading{homogenous field}
 	\midrule
-	E		& q \left\vert \vec{E} \right\vert d & ~\\
+	E		& q \vec{\mathbf E} d				& ~\\
+	\vec{F}		& q \vec{\mathbf E}				& ~\\
+	\vec{\mathbf E}	& \frac{\vec{F}}{q}				& ~\\
+	\mathbf E	& \frac{U}{d}					& ~\\
+	V		& \frac{E}{q} = \vec{\mathbf E} d		& ~\\
+	\formulatableheading{}
+	\midrule
+	\formulatableheading{Radial symetric field\index{Elecromagnetism!Electrostatics!Radial symetric field}}
+	\midrule
+	U		& - \frac{1}{4 \pi \varepsilon} Qq \left( \frac{1}{r_{1}} - \frac{1}{r_{2}} \right)
+									& ~\\
+	U		& \frac{Qq}{4 \pi \varepsilon_{0}} \frac{1}{r}	& for $r_{1} \to \infty$\\
+	\vec{F}		& \frac{1}{4 \pi \varepsilon_{0}} \frac{Qq}{r^{2}} \hat r
+									& ~\\
+	\varepsilon_{0}	& \frac{\sigma}{\mathbf E}			& const.\\
 \end{formulatable}
 
 \printindex
