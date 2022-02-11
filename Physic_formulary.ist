@@ -1,3 +1,4 @@
+preamble "\\begin{theindex}\n\\pagenumbering{Roman}\\setcounter{page}{3}\n"
 headings_flag 1
 headings_prefix "{\\defaultfamily\\large\\bfseries "
 headings_suffix "}\\nopagebreak\n"

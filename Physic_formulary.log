@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.2.6)  10 FEB 2022 22:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.2.6)  11 FEB 2022 14:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1716,13 +1716,13 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 117.
+(Font)              using `OT1/cmss/bx/n' instead on input line 116.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 117
+LaTeX Font Info:    Trying to load font information for U+msa on input line 116
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1731,7 +1731,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 117
+LaTeX Font Info:    Trying to load font information for U+msb on input line 116
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1741,7 +1741,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 11
-7.
+6.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -1752,94 +1752,21 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 Package tocbasic Info: character protrusion at toc deactivated on input line 12
 4.
 
-(./Physic_formulary.toc
-
-LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 2.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 2.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 3.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 3.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 4.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 4.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 5.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 5.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 6.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 6.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 7.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 7.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 8.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 8.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 11.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 11.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 12.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 12.
-
-)
+(./Physic_formulary.toc)
 \tf@toc=\write7
 \openout7 = `Physic_formulary.toc'.
 
 LaTeX Font Info:    Trying to load font information for OT1+qbk on input line 1
 26.
- (/usr/local/texlive/2021/texmf-dist/tex/latex/tex-gyre/ot1qbk.fd
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/tex-gyre/ot1qbk.fd
 File: ot1qbk.fd 2009/09/25 v1.2 font definition file for OT1/qbk
 )
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `qbk' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [2]
-[1]
+ [2] [1]
 Overfull \hbox (14.58214pt too wide) in paragraph at lines 159--176
 [] 
  []
@@ -1888,23 +1815,29 @@ Underfull \hbox (badness 10000) in alignment at lines 282--282
 runsystem(makeindex -s Physic_formulary.ist Physic_formulary.idx)...executed sa
 fely (allowed).
 
- (./Physic_formulary.ind) [6
+ (./Physic_formulary.ind) [3
 
-] [7] (./Physic_formulary.aux)
+] [4] (./Physic_formulary.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `Physic_formulary.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+Package biblatex Warning: Please rerun LaTeX.
+
 Package logreq Info: Writing requests to 'Physic_formulary.run.xml'.
 \openout1 = `Physic_formulary.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 51899 strings out of 478287
- 1195008 string characters out of 5846765
- 2142130 words of memory out of 5000000
- 69279 multiletter control sequences out of 15000+600000
+ 51893 strings out of 478287
+ 1194896 string characters out of 5846765
+ 2142020 words of memory out of 5000000
+ 69273 multiletter control sequences out of 15000+600000
  483808 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,20n,106p,10611b,2073s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 108i,20n,106p,10611b,1798s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/elias2/.texlive2019/texmf-var/fonts/pk/ljfour/public/cm-mf-extra-bold
 /cmttb10.864pk>{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/tex-gyre/q-r
 m.enc} </home/elias2/.texlive2019/texmf-var/fonts/pk/ljfour/public/cm-mf-extra-
@@ -1922,10 +1855,10 @@ pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.p
 fb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb
 ></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
 .pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/tex-gyre/qbkr.pfb>
-Output written on Physic_formulary.pdf (9 pages, 186960 bytes).
+Output written on Physic_formulary.pdf (9 pages, 182511 bytes).
 PDF statistics:
- 256 PDF objects out of 1000 (max. 8388607)
- 162 compressed objects within 2 object streams
+ 245 PDF objects out of 1000 (max. 8388607)
+ 151 compressed objects within 2 object streams
  21 named destinations out of 1000 (max. 500000)
  16997 words of extra memory for PDF output out of 17280 (max. 10000000)
 
