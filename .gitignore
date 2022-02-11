@@ -1,6 +1,7 @@
 *.swp
 
 # removes compiler files
+*.aux
 *.log
 *.out
 *.run.xml
@@ -8,6 +9,7 @@
 # removes biblography files
 *.bbl
 *.bcf
+*.blg
 
 # remove index files
 *.idx
