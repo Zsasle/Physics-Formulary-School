@@ -1,0 +1,18 @@
+*.swp
+
+# removes compiler files
+*.log
+*.out
+*.run.xml
+
+# removes biblography files
+*.bbl
+*.bcf
+
+# remove index files
+*.idx
+*.ilg
+*.ind
+
+# removes table of content files
+*.toc
