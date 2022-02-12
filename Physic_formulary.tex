@@ -41,6 +41,7 @@
 \usepackage{xcolor}
 \usepackage{pgfplots, pgfplotstable}
 \usepackage{booktabs}
+\usepackage{parskip}
 \usepackage{float}
 \usepackage{microtype}
 \usepackage{subfigure}
@@ -90,16 +91,16 @@ sorting=ynt
 %\setlength\extrarowheight{8pt}
 \renewcommand{\arraystretch}{1.25}
 \newenvironment{formulatable}{%
-	\center%
+	\begingroup%
+	\setlength{\tabcolsep}{0pt}%
 	\tabularx{\textwidth}{%
-		>{\hsize = 1.5\hsize\raggedleft\begin{math}} X <{\end{math}}%
-		@{{}$ \: = \: ${}}%
-		>{\hsize = 0.75\hsize\begin{math}} X <{\end{math}}%
-		>{\hsize = 0.75\hsize}X%
+		>{\hsize = 1.5\hsize\raggedleft\arraybackslash\begin{math}} X <{\:\end{math}}%
+		>{\hsize = 0.75\hsize\raggedright\arraybackslash\begin{math}} X <{\end{math}}%
+		>{\hsize = 0.75\hsize\raggedright\arraybackslash\:}X%
 	}%
 }{%
 	\endtabularx%
-	\endcenter%
+	\endgroup%
 }
 \newcommand{\formulatableheading}[1]{\multicolumn{3}{c}{#1}\\}
 
@@ -158,23 +159,21 @@ sorting=ynt
 
 \newpage
 \section{Other physical interrelationships}
-\begin{tabular}{lll}
+\begin{tabularx}{\textwidth}{l l >{\raggedright\arraybackslash} X}
 	Visible spectrum:				& \multicolumn{2}{l}{$ \qtyrange{380}{750}{\nano\metre}$}\\
 	Speed of sound under standart conditions:	& \multicolumn{2}{l}{$ \qty{343}{\metre\per\second}$}\\
 	Dalton $\si{\dalton}$ / unified atomic mass unit $\unit{\atomicmassunit}$:
-				&	$\unit{\dalton}/\unit{\atomicmassunit}$	& $= \qty{1.66053906660e-27}	{\kilo\gram}$\\
-	Hydrogen mass:					&	$m_\text{H}$	& $= \qtyrange{1.00784}{1.00811}{\dalton}$\\
-	Atomic mass of helium $\ce{^{4}He}$		&	$m_\text{He}$	& $= \qty{4.002603254}		{\dalton}$\\
-	\multirow{2}{*}{Alternate energy units:}	&	$\mathrm{kW \, h}$
-										& $= \qty{3.6e6}		{\joule}$\\
-							&	$\unit{\electronvolt}$
-										& $= \qty{1.602176634e-19}{\joule}$\\
-	\multirow{2}{*}{Pressure:}			&	$\qty{1}{\pascal}$
-										& $= \qty{1}{\newton\per\square\metre}$\\
-							&	$\qty{1}{bar}$	& $= \qty{e5}{\pascal}$\\
+							&	$\unit{\dalton}/\unit{\atomicmassunit}$
+											& $= \qty{1.66053906660e-27}	{\kilo\gram}$\\
+	Hydrogen mass:					&	$m_\text{H}$		& \begin{math}= \qtyrange{1.00784}{1.00811}{\dalton}\end{math}\\
+	Atomic mass of helium $\ce{^{4}He}$		&	$m_\text{He}$		& $= \qty{4.002603254}		{\dalton}$\\
+	Kilowatt-hour:					&	$\mathrm{kW \, h}$	& $= \qty{3.6e6}		{\joule}$\\
+	Kilowatt-hour:					&	$\unit{\electronvolt}$	& $= \qty{1.602176634e-19}{\joule}$\\
+	Pressure:					&	$\qty{1}{\pascal}$	& $= \qty{1}{\newton\per\square\metre}$\\
+	Pressure:					&	$\qty{1}{bar}$		& $= \qty{e5}{\pascal}$\\
 	Absolute zero:					&	$\qty{-273.15}{\degreeCelsius}$
-										& $= \qty{0}{\kelvin}$\\
-\end{tabular}
+											& $= \qty{0}{\kelvin}$\\
+\end{tabularx}
 
 \newpage
 \section{Energy}
@@ -182,42 +181,41 @@ sorting=ynt
 	\toprule
 	\formulatableheading{Kinetic Energy\index{Energy!Kinetic Energy}}
 	\midrule
-	E_{\text{k}}	& \frac{1}{2} m v^{2} & ~\\
+	E_{\text{k}}	&	= \frac{1}{2} m v^{2} & ~\\
 	\formulatableheading{}
 	\formulatableheading{Potential Energy\index{Energy!Potential Energy}}
 	\midrule
-	U		&	m g h		& (gravitational)\\
-	U 		&	\frac{1}{2} \cdot k \cdot x^{2}
+	U		&	= m g h		& (gravitational)\\
+	U 		&	= \frac{1}{2} \cdot k \cdot x^{2}
 						& (elastic)\\
-	U		&	\frac{1}{2} \cdot C \cdot V^{2}
+	U		&	= \frac{1}{2} \cdot C \cdot V^{2}
 						& (electric)\\
-	U		&	-m B		& (magnetic)\\
-	U		&	\int F(r) \, dr	& (general)\\
+	U		&	= -m B		& (magnetic)\\
+	U		&	= \int F(r) \, dr	& (general)\\
 	\bottomrule
 \end{formulatable}
-
 \section{Motion}
 \begin{formulatable}
 	\toprule
 	\multicolumn{3}{c}{uniform linear motion}\\
 	\midrule
-	s(t)		& v t \, \left( \, + s_{\text{0}} \, \right)	& ~\\
-	v(t)		& const.					& ~\\
-	a(t)		& 0\\
+	s(t)		& = v t \, \left( \, + s_{\text{0}} \, \right)	& ~\\
+	v(t)		& = const.					& ~\\
+	a(t)		& = 0\\
 	\multicolumn{3}{c}{}\\
 	\multicolumn{3}{c}{\text{non-uniform linear motion}}\\
 	\midrule
-	s(t)		& \frac{1}{2} a t^{2} \left(\, + v_{\text{0}} \, t + s_{\text{0}} \, \right)
+	s(t)		& = \frac{1}{2} a t^{2} \left(\, + v_{\text{0}} \, t + s_{\text{0}} \, \right)
 									& ~\\
-	v(t)		& a t \, \left( \, + v_{\text{0}} \, \right)	& ~\\
-	a(t)		& const.					& ~\\
+	v(t)		& = a t \, \left( \, + v_{\text{0}} \, \right)	& ~\\
+	a(t)		& = const.					& ~\\
 	\multicolumn{3}{c}{}\\
 	\multicolumn{3}{c}{\text{Circular motion}}\\
 	\midrule
-	F_{\text{Z}}	& \frac{m v^{2}}{r} = m \, \omega^{2} r		& ~\\
-	\omega		& \frac{v}{r} = \frac{2\pi}{T} = \frac{\Delta\varphi}{\Delta t}
+	F_{\text{Z}}	& = \frac{m v^{2}}{r} = m \, \omega^{2} r		& ~\\
+	\omega		& = \frac{v}{r} = \frac{2\pi}{T} = \frac{\Delta\varphi}{\Delta t}
 									& $\varphi$ in rad\\
-	f		& \frac{1}{T}					& ~\\
+	f		& = \frac{1}{T}					& ~\\
 	\bottomrule
 \end{formulatable}
 
@@ -226,27 +224,28 @@ sorting=ynt
 	\toprule
 	\multicolumn{3}{c}{momentum itself}\\
 	\midrule
-	\vec{p}		& m \vec{v} & ~\\
-	\vec{p}		& {\frac{\hbar}{\lambda}}			& photons\\
-	\vec{p}		& \sqrt{m_{\text{0}}^{2} \unit{\square\clight} + \frac{E^{2}}{\unit{\square\clight}}}
+	\vec{p}		& = m \vec{v} & ~\\
+	\vec{p}		& = {\frac{\hbar}{\lambda}}			& photons\\
+	\vec{p}		& = \sqrt{m_{\text{0}}^{2} \unit{\square\clight} + \frac{E^{2}}{\unit{\square\clight}}}
 									& general\\
 	\multicolumn{3}{c}{}\\
 	\midrule
 	\multicolumn{3}{c}{relations to momentum}\\
 	\midrule
-	\sum_{i} m_{i} \, u_{i} & \sum_{i} m_{i} \, v_{i}		& conservation of momentum\\
-	\Delta p	& F \Delta t & ~\\
-	E_{\text{k}}	& \int p \, dv & ~\\
+	\sum_{i} m_{i} \, u_{i}
+			& = \sum_{i} m_{i} \, v_{i}		& conservation of momentum\\
+	\Delta p	& = F \Delta t & ~\\
+	E_{\text{k}}	& = \int p \, dv & ~\\
 \end{formulatable}
 \section{Electricity}
 \begin{formulatable}
 	\toprule
 	\multicolumn{3}{c}{General}\\
 	\midrule
-	I		& \frac{\Delta Q}{\Delta t} = \frac{\partial Q}{\partial t} = \dot Q & in \unit{\ampere}\\
-	R		& \frac{U}{I} = \rho \frac{l}{A}		& in \unit{\ohm}\\
-	E		& U \cdot Q					&~\\
-	P		& \frac{\Delta E}{\Delta t} = U I		& in \unit{\watt} Energy flow / "Power"\\
+	I		& = \frac{\Delta Q}{\Delta t} = \frac{\partial Q}{\partial t} = \dot Q & in \unit{\ampere}\\
+	R		& = \frac{U}{I} = \rho \frac{l}{A}		& in \unit{\ohm}\\
+	E		& = U \cdot Q					&~\\
+	P		& = \frac{\Delta E}{\Delta t} = U I		& in \unit{\watt} Energy flow / "Power"\\
 \end{formulatable}
 
 \newpage
@@ -256,20 +255,20 @@ sorting=ynt
 	\toprule
 	\multicolumn{3}{c}{Homogeneous field\index{Gravitation!Homogeneous Field}}\\
 	\midrule
-	E		& mgh						& ~\\
-	\vec{F_{g}}	& m \vec{g}					& ~\\
-	\vec{g}		& \frac{\vec{F_{g}}}{m}				& ~\\
-	\Delta \varphi	& \frac{E}{m} = gh				& ~\\
+	E		& = mgh						& ~\\
+	\vec{F_{g}}	& = m \vec{g}					& ~\\
+	\vec{g}		& = \frac{\vec{F_{g}}}{m}				& ~\\
+	\Delta \varphi	& = \frac{E}{m} = gh				& ~\\
 	\multicolumn{3}{c}{}\\
 	\midrule
 	\multicolumn{3}{c}{Radial symmetric field\index{Gravitation!Radial symmetric field}}\\
 	\midrule
-	U		& G Mm \left( \frac{1}{r_{1}} - \frac{1}{r_{2}} \right)
+	U		& = G Mm \left( \frac{1}{r_{1}} - \frac{1}{r_{2}} \right)
 									& ~\\
-	U		& - G Mm \frac{1}{r}				& for $r_{1} \to \infty$\\
-	\vec{F_{g}}	& - G \frac{Mm}{r^{2}} \hat{r}			& ~\\
-	\vec{g}		& \frac{\vec{F_{g}}}{m} = -G \frac{M}{r_{2}} \hat r\\
-	\Delta \varphi	& \frac{E}{m} = \gamma M \left( \frac{1}{r_{1}} - \frac{1}{r_{2}} \right)
+	U		& = - G Mm \frac{1}{r}				& for $r_{1} \to \infty$\\
+	\vec{F_{g}}	& = - G \frac{Mm}{r^{2}} \hat{r}			& ~\\
+	\vec{g}		& = \frac{\vec{F_{g}}}{m} = -G \frac{M}{r_{2}} \hat r\\
+	\Delta \varphi	& = \frac{E}{m} = \gamma M \left( \frac{1}{r_{1}} - \frac{1}{r_{2}} \right)
 									& ~\\
 \end{formulatable}
 \subsection{Electromagnetism}
@@ -277,21 +276,23 @@ sorting=ynt
 	\toprule
 	\formulatableheading{homogenous field}
 	\midrule
-	E		& q \vec{\mathbf E} d				& ~\\
-	\vec{F}		& q \vec{\mathbf E}				& ~\\
-	\vec{\mathbf E}	& \frac{\vec{F}}{q}				& ~\\
-	\mathbf E	& \frac{V}{d}					& ~\\
-	V		& \frac{E}{q} = \vec{\mathbf E} d		& ~\\
+	E		& = q \vec{\mathbf E} d				& ~\\
+	\vec{F}		& = q \vec{\mathbf E}				& ~\\
+	\vec{\mathbf E}	& = \frac{\vec{F}}{q}				& ~\\
+	\mathbf E	& = \frac{V}{d}					& ~\\
+	V		& = \frac{E}{q} = \vec{\mathbf E} d		& ~\\
 	\formulatableheading{}
 	\midrule
 	\formulatableheading{Radial symetric field\index{Elecromagnetism!Electrostatics!Radial symetric field}}
 	\midrule
-	U		& - \frac{1}{4 \pi \varepsilon} Qq \left( \frac{1}{r_{1}} - \frac{1}{r_{2}} \right)
+	U		& = - \frac{1}{4 \pi \varepsilon_{0} \varepsilon_{r}} Qq \left( \frac{1}{r_{1}} - \frac{1}{r_{2}} \right)
 									& ~\\
-	U		& \frac{Qq}{4 \pi \varepsilon_{0}} \frac{1}{r}	& for $r_{1} \to \infty$\\
-	\vec{F}		& \frac{1}{4 \pi \varepsilon_{0}} \frac{Qq}{r^{2}} \hat r
+	U		& = \frac{Qq}{4 \pi \varepsilon_{0}} \frac{1}{r}	& for $r_{1} \to \infty$\\
+	\vec{F}		& = \frac{1}{4 \pi \varepsilon_{0} \varepsilon_{r}} \frac{Qq}{r^{2}} \hat r
 									& ~\\
-	\varepsilon_{0}	& \frac{\sigma}{\mathbf E}			& const.\\
+	\mathbf E	& = \frac{\vec{F}}{q} = \frac{1}{4 \pi \varepsilon_{0} \varepsilon{r}} \frac{Q}{r^{2}} \hat r
+									& ~\\
+	\varepsilon_{0}	& = \frac{\sigma}{\varepsilon_{r} \mathbf E}	& const.\\
 \end{formulatable}
 
 \printindex
