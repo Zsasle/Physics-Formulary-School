@@ -30,6 +30,7 @@
 \usepackage{multirow}
 \usepackage{wrapfig}
 \sisetup{
+	range-phrase = {\ \linebreak[0]\text{to}\ \nolinebreak},
 	%scientific-notation = engineering,
 	%locale = EN,
 	per-mode = fraction,
@@ -164,8 +165,8 @@ sorting=ynt
 	Speed of sound under standart conditions:	& \multicolumn{2}{l}{$ \qty{343}{\metre\per\second}$}\\
 	Dalton $\si{\dalton}$ / unified atomic mass unit $\unit{\atomicmassunit}$:
 							&	$\unit{\dalton}/\unit{\atomicmassunit}$
-											& $= \qty{1.66053906660e-27}	{\kilo\gram}$\\
-	Hydrogen mass:					&	$m_\text{H}$		& \begin{math}= \qtyrange{1.00784}{1.00811}{\dalton}\end{math}\\
+											& \begin{math}\sloppy= \qty{1.66053906660e-27}	{\kilo\gram}\end{math}\\
+	Hydrogen mass:					&	$m_\text{H}$		& \begin{math}\sloppy= \qtyrange{1.00784}{1.00811}{\dalton}\end{math}\\
 	Atomic mass of helium $\ce{^{4}He}$		&	$m_\text{He}$		& $= \qty{4.002603254}		{\dalton}$\\
 	Kilowatt-hour:					&	$\mathrm{kW \, h}$	& $= \qty{3.6e6}		{\joule}$\\
 	Kilowatt-hour:					&	$\unit{\electronvolt}$	& $= \qty{1.602176634e-19}{\joule}$\\
