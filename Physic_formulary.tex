@@ -1,11 +1,29 @@
 \documentclass[12pt, a4paper]{scrartcl}
 
+\newcommand{\datetimenow}{2022.02.16}
+
 \sloppy
 
 \renewcommand{\familydefault}{\ttdefault}
 \newcommand{\defaultfamily}{\ttfamily}
+\renewcommand{\bfseries}{\fontseries{bx}\selectfont}
+\DeclareRobustCommand{\bxseries}{\fontseries{bx}\selectfont}
+\DeclareRobustCommand{\textbx}{\fontseries{bx}}
 
-\newcommand{\datetimenow}{2022.02.10}
+\catcode`_=12 %
+\renewcommand{\texttt}[1]{%
+  \begingroup
+  \ttfamily
+  \begingroup\lccode`~=`/\lowercase{\endgroup\def~}{/\discretionary{}{}{}}%
+  \begingroup\lccode`~=`[\lowercase{\endgroup\def~}{[\discretionary{}{}{}}%
+  \begingroup\lccode`~=`.\lowercase{\endgroup\def~}{.\discretionary{}{}{}}%
+  \begingroup\lccode`~=`_\lowercase{\endgroup\def~}{_\discretionary{}{}{}}%
+  \catcode`/=\active\catcode`[=\active\catcode`.=\active\catcode`_=\active
+  \scantokens{#1\noexpand}%
+  \endgroup
+}
+\catcode`_=8 %
+
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 %\usepackage{ascii}
@@ -42,7 +60,7 @@
 \usepackage{xcolor}
 \usepackage{pgfplots, pgfplotstable}
 \usepackage{booktabs}
-\usepackage{parskip}
+%\usepackage{parskip}
 \usepackage{float}
 \usepackage{microtype}
 \usepackage{subfigure}
@@ -80,14 +98,21 @@ sorting=ynt
 \setlength{\headheight}{1,5cm}
 \usepackage{geometry}
 \geometry{hmargin=2cm, vmargin=3.5cm}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\usepackage{titlesec}
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\usepackage{titlesec}
+\usepackage{scrlayer-scrpage}
 \usepackage{bold-extra}
-\titleformat{\section}{\defaultfamily\bfseries\Large}{\thesection}{1em}{}
-\titleformat{\subsection}{\defaultfamily\bfseries\large}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}{\defaultfamily\bfseries}{\thesubsubsection}{1em}{}
-\titleformat{\paragraph}{\defaultfamily\bfseries}{\theparagraph}{1em}{}
+%\titleformat{\section}{\defaultfamily\bxseries\Large}{\thesection}{1em}{}
+%\titleformat{\subsection}{\defaultfamily\bxseries\large}{\thesubsection}{1em}{}
+%\titleformat{\subsubsection}{\defaultfamily\bxseries}{\thesubsubsection}{1em}{}
+%\titleformat{\paragraph}{\defaultfamily\bxseries}{\theparagraph}{1em}{}
+
+\addtokomafont{section}{\defaultfamily\bxseries\Large}
+\addtokomafont{subsection}{\defaultfamily\bxseries\large}
+\addtokomafont{subsubsection}{\defaultfamily\bxseries}
+\addtokomafont{paragraph}{\defaultfamily\bxseries}
+%\renewcommand*{\thesection}{\arabic{section}}
 
 %\setlength\extrarowheight{8pt}
 \renewcommand{\arraystretch}{1.25}
@@ -120,16 +145,16 @@ sorting=ynt
 \end{titlepage}
 
 \newpage
-\lhead{School}
+\ihead{School}
 \chead{Physic formulary}
-\rhead{\datetimenow}
+\ohead{\datetimenow}
 
 \tableofcontents
 
 \newpage
 
 \pagenumbering{arabic}
-\section{Constants}
+\section[Constants]{Constants\cite{NIST-Reference}}
 \begin{tabularx}{\textwidth}{l l @{{} $ \: = \: $ {}}X}
 	Bohr radius\index{Bohr radius}			&	$a_{\text{0}}$		& \begin{math} \frac{4\pi \varepsilon_{\text{0}}\hbar^{2}}{m_{\text{e}}e^{2}} = \frac{\varepsilon_{\text{0}}h^{2}}{\pi m_{\text{e}}e^{2}} = \frac {\hbar }{m_{\text{e}}c\alpha} \* = \qty{5.29177210903e-11}{\metre} \end{math}\\
 	Velocity of light\index{Light}:			&	$\unit{\clight}$	& $\qty{299792458}		{\meter\per\second}$\\
@@ -296,9 +321,32 @@ sorting=ynt
 	\varepsilon_{0}	& = \frac{\sigma}{\varepsilon_{r} \mathbf E}	& const.\\
 \end{formulatable}
 
+\newpage
+\section[Units]{Units\cite{NIST-Reference}}
+\begingroup
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X | l | >{\begin{math}} r <{\end{math}} @{\hskip 0pt}@{{}$\:${}} >{\begin{math}} l <{\end{math}}| >{\begin{math}} r <{\end{math}}}
+	Derived quantity	& Name		& \multicolumn{2}{l}{In terms of other SI units\:} \vline & \mathtt{Dimensions}\\
+	\toprule
+	electric charge, quantity of electricity
+				& coulomb	& \unit{\coulomb}	& = \unit{\second\ampere}								& {\mathsf{T\;I}}\\
+	capacitance		& farad		& \unit{\farad}		& = \unit{\second\tothe{4}\per\square\metre\per\kilogram\square\ampere}			& {\mathsf{T^{4}\;L^{-2}\;M^{-1}\;I^{2}}}\\
+	inductance		& henry		& \unit{\henry}		& = \unit{\per\square\second\square\metre\kilogram\per\square\ampere}			& {\mathsf{T^{-2}\;L^{2}\;M\;I^{-1}}}\\
+	frequency		& hertz		& \unit{\hertz}		& = \unit{\per\second}									& {\mathsf{T^{-1}}}\\
+	energy, work, quantity of heat
+				& joule		& \unit{\joule}		& = \unit{\per\square\second\square\metre\kilogram}					& {\mathsf{T^{-2}\;L^{2}\;M}}\\
+	force			& newton	& \unit{\newton}	& = \unit{\per\square\second\metre\kilogram}						& {\mathsf{T^{-2}\;L\;M}}\\
+	electric resistance	& ohm		& \unit{\ohm}		& = \unit{\per\cubic\second\square\metre\kilogram\square\ampere}			& {\mathsf{T^{-3}\;L^{2}\;M\;I^{-2}}}\\
+	pressure, stress	& pascal	& \unit{\pascal}	& = \unit{\newton\per\metre} = \unit{\per\square\second\per\metre\kilogram}		& {\mathsf{T^{-2}\;L^{-1}\;M}}\\
+	plane angle		& radian	& \unit{\radian}	& = \unit{\metre\per\metre}								& {\mathsf{}}\\
+	magnetic flux		& weber		& \unit{\tesla}		& = \unit{\weber\per\square\metre} = \unit{\per\square\second\kilogram\per\ampere}	& {\mathsf{T^{-2}\;M\;I^{-1}}}\\
+	electric potential difference, electromotive force
+				& volt		& \unit{\volt}		& = \unit{\watt\per\ampere} = \unit{\kilogram\square\metre\per\cubic\second\per\ampere}	& {\mathsf {T^{-3}\;L^{2}\;M\;I^{-1}}}\\
+	power, radiant flux	& watt		& \unit{\watt}		& = \unit{\joule\per\second} = \unit{\per\cubic\second\square\metre\kilogram}		& {\mathsf{T^{-3}\;L^{2}\;M}}\\
+\end{tabularx}
+\endgroup
+
 \printindex
 \newpage
-\nocite{NIST-Reference}
 {\raggedright\printbibliography[heading=bibintoc, title={Bibliography}]}
 
 \end{document}
