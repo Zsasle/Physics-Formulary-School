@@ -202,7 +202,7 @@ sorting=ynt
 \end{tabularx}
 
 \newpage
-\section{Energy}
+\section{Energy\index{Energy}}
 \begin{formulatable}
 	\toprule
 	\formulatableheading{Kinetic Energy\index{Energy!Kinetic Energy}}
@@ -220,23 +220,23 @@ sorting=ynt
 	U		&	= \int F(r) \, dr	& (general)\\
 	\bottomrule
 \end{formulatable}
-\section{Motion}
+\section{Motion\index{motion}}
 \begin{formulatable}
 	\toprule
-	\multicolumn{3}{c}{uniform linear motion}\\
+	\multicolumn{3}{c}{uniform linear motion\index{motion!uniform linear motion}}\\
 	\midrule
 	s(t)		& = v t \, \left( \, + s_{\text{0}} \, \right)	& ~\\
 	v(t)		& = const.					& ~\\
 	a(t)		& = 0\\
 	\multicolumn{3}{c}{}\\
-	\multicolumn{3}{c}{\text{non-uniform linear motion}}\\
+	\multicolumn{3}{c}{non-uniform linear motion\index{motion!non-uniform linear motion}}\\
 	\midrule
 	s(t)		& = \frac{1}{2} a t^{2} \left(\, + v_{\text{0}} \, t + s_{\text{0}} \, \right)
 									& ~\\
 	v(t)		& = a t \, \left( \, + v_{\text{0}} \, \right)	& ~\\
 	a(t)		& = const.					& ~\\
 	\multicolumn{3}{c}{}\\
-	\multicolumn{3}{c}{\text{Circular motion}}\\
+	\multicolumn{3}{c}{circular motion\index{motion!circular motion}}\\
 	\midrule
 	F_{\text{Z}}	& = \frac{m v^{2}}{r} = m \, \omega^{2} r		& ~\\
 	\omega		& = \frac{v}{r} = \frac{2\pi}{T} = \frac{\Delta\varphi}{\Delta t}
@@ -245,7 +245,7 @@ sorting=ynt
 	\bottomrule
 \end{formulatable}
 
-\section{Momentum}
+\section{Momentum\index{Momentum}}
 \begin{formulatable}
 	\toprule
 	\multicolumn{3}{c}{momentum itself}\\
@@ -263,7 +263,7 @@ sorting=ynt
 	\Delta p	& = F \Delta t & ~\\
 	E_{\text{k}}	& = \int p \, dv & ~\\
 \end{formulatable}
-\section{Electricity}
+\section{Electricity\index{Electromagnetism}}
 \begin{formulatable}
 	\toprule
 	\multicolumn{3}{c}{General}\\
@@ -297,10 +297,10 @@ sorting=ynt
 	\Delta \varphi	& = \frac{E}{m} = \gamma M \left( \frac{1}{r_{1}} - \frac{1}{r_{2}} \right)
 									& ~\\
 \end{formulatable}
-\subsection{Electromagnetism}
+\subsection{Electromagnetism\index{Electromagnetism}\index{Electromagnetism!Electrostatics}}
 \begin{formulatable}
 	\toprule
-	\formulatableheading{homogenous field}
+	\formulatableheading{homogenous field\index{Electromagnetism!Electrostatics!Homogenous field}}
 	\midrule
 	E		& = q \vec{\mathbf E} d				& ~\\
 	\vec{F}		& = q \vec{\mathbf E}				& ~\\
@@ -322,26 +322,26 @@ sorting=ynt
 \end{formulatable}
 
 \newpage
-\section[Units]{Units\cite{NIST-Units}}
+\section[Units]{Units\index{Units}\cite{NIST-Units}}
 \begingroup
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X | l | >{\begin{math}} r <{\end{math}} @{\hskip 0pt}@{{}$\:${}} >{\begin{math}} l <{\end{math}}| >{\begin{math}} r <{\end{math}}}
 	Derived quantity	& Name		& \multicolumn{2}{l}{In terms of other SI units\:} \vline & \mathtt{Dimensions}\\
 	\toprule
 	electric charge, quantity of electricity
-				& coulomb	& \unit{\coulomb}	& = \unit{\second\ampere}								& {\mathsf{T\;I}}\\
-	capacitance		& farad		& \unit{\farad}		& = \unit{\second\tothe{4}\per\square\metre\per\kilogram\square\ampere}			& {\mathsf{T^{4}\;L^{-2}\;M^{-1}\;I^{2}}}\\
-	inductance		& henry		& \unit{\henry}		& = \unit{\per\square\second\square\metre\kilogram\per\square\ampere}			& {\mathsf{T^{-2}\;L^{2}\;M\;I^{-1}}}\\
-	frequency		& hertz		& \unit{\hertz}		& = \unit{\per\second}									& {\mathsf{T^{-1}}}\\
+				& coulomb\index{Units!coulomb}	& \unit{\coulomb}	& = \unit{\second\ampere}								& {\mathsf{T\;I}}\\
+	capacitance		& farad\index{Units!farad}	& \unit{\farad}		& = \unit{\second\tothe{4}\per\square\metre\per\kilogram\square\ampere}			& {\mathsf{T^{4}\;L^{-2}\;M^{-1}\;I^{2}}}\\
+	inductance		& henry\index{Units!henry}	& \unit{\henry}		& = \unit{\per\square\second\square\metre\kilogram\per\square\ampere}			& {\mathsf{T^{-2}\;L^{2}\;M\;I^{-1}}}\\
+	frequency		& hertz\index{Units!hertz}	& \unit{\hertz}		& = \unit{\per\second}									& {\mathsf{T^{-1}}}\\
 	energy, work, quantity of heat
-				& joule		& \unit{\joule}		& = \unit{\per\square\second\square\metre\kilogram}					& {\mathsf{T^{-2}\;L^{2}\;M}}\\
-	force			& newton	& \unit{\newton}	& = \unit{\per\square\second\metre\kilogram}						& {\mathsf{T^{-2}\;L\;M}}\\
-	electric resistance	& ohm		& \unit{\ohm}		& = \unit{\per\cubic\second\square\metre\kilogram\square\ampere}			& {\mathsf{T^{-3}\;L^{2}\;M\;I^{-2}}}\\
-	pressure, stress	& pascal	& \unit{\pascal}	& = \unit{\newton\per\metre} = \unit{\per\square\second\per\metre\kilogram}		& {\mathsf{T^{-2}\;L^{-1}\;M}}\\
-	plane angle		& radian	& \unit{\radian}	& = \unit{\metre\per\metre}								& {\mathsf{}}\\
-	magnetic flux		& weber		& \unit{\tesla}		& = \unit{\weber\per\square\metre} = \unit{\per\square\second\kilogram\per\ampere}	& {\mathsf{T^{-2}\;M\;I^{-1}}}\\
+				& joule\index{Units!joule}	& \unit{\joule}		& = \unit{\per\square\second\square\metre\kilogram}					& {\mathsf{T^{-2}\;L^{2}\;M}}\\
+	force			& newton\index{Units!newton}	& \unit{\newton}	& = \unit{\per\square\second\metre\kilogram}						& {\mathsf{T^{-2}\;L\;M}}\\
+	electric resistance	& ohm\index{Units!ohm}		& \unit{\ohm}		& = \unit{\per\cubic\second\square\metre\kilogram\square\ampere}			& {\mathsf{T^{-3}\;L^{2}\;M\;I^{-2}}}\\
+	pressure, stress	& pascal\index{Units!pascal}	& \unit{\pascal}	& = \unit{\newton\per\metre} = \unit{\per\square\second\per\metre\kilogram}		& {\mathsf{T^{-2}\;L^{-1}\;M}}\\
+	plane angle		& radian\index{Units!radian}	& \unit{\radian}	& = \unit{\metre\per\metre}								& {\mathsf{}}\\
+	magnetic flux		& weber\index{Units!weber}	& \unit{\tesla}		& = \unit{\weber\per\square\metre} = \unit{\per\square\second\kilogram\per\ampere}	& {\mathsf{T^{-2}\;M\;I^{-1}}}\\
 	electric potential difference, electromotive force
-				& volt		& \unit{\volt}		& = \unit{\watt\per\ampere} = \unit{\kilogram\square\metre\per\cubic\second\per\ampere}	& {\mathsf {T^{-3}\;L^{2}\;M\;I^{-1}}}\\
-	power, radiant flux	& watt		& \unit{\watt}		& = \unit{\joule\per\second} = \unit{\per\cubic\second\square\metre\kilogram}		& {\mathsf{T^{-3}\;L^{2}\;M}}\\
+				& volt\index{Units!volt}	& \unit{\volt}		& = \unit{\watt\per\ampere} = \unit{\kilogram\square\metre\per\cubic\second\per\ampere}	& {\mathsf {T^{-3}\;L^{2}\;M\;I^{-1}}}\\
+	power, radiant flux	& watt\index{Units!watt}	& \unit{\watt}		& = \unit{\joule\per\second} = \unit{\per\cubic\second\square\metre\kilogram}		& {\mathsf{T^{-3}\;L^{2}\;M}}\\
 \end{tabularx}
 \endgroup
 
