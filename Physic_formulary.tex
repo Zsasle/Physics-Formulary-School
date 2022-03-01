@@ -119,10 +119,11 @@ sorting=ynt
 \newenvironment{formulatable}{%
 	\begingroup%
 	\setlength{\tabcolsep}{0pt}%
+	\centering
 	\tabularx{\textwidth}{%
-		>{\hsize = 1.5\hsize\raggedleft\arraybackslash\begin{math}} X <{\:\end{math}}%
-		>{\hsize = 0.75\hsize\raggedright\arraybackslash\begin{math}} X <{\end{math}}%
-		>{\hsize = 0.75\hsize\raggedright\arraybackslash\:}X%
+		>{\hsize = 0.75\hsize\raggedleft\arraybackslash\begin{math}} X <{\:\end{math}}%
+			>{\hsize = 0.75\hsize\raggedright\arraybackslash\begin{math}} X <{\end{math}}%
+				>{\hsize = 1.50\hsize\raggedright\arraybackslash\:}X%
 	}%
 }{%
 	\endtabularx%
@@ -217,9 +218,10 @@ sorting=ynt
 	U		&	= \frac{1}{2} \cdot C \cdot V^{2}
 						& (electric)\\
 	U		&	= -m B		& (magnetic)\\
-	U		&	= \int F(r) \, dr	& (general)\\
+	U		&	= \int F(r) \, \partial r	& (general)\\
 	\bottomrule
 \end{formulatable}
+
 \section{Motion\index{motion}}
 \begin{formulatable}
 	\toprule
@@ -261,8 +263,9 @@ sorting=ynt
 	\sum_{i} m_{i} \, u_{i}
 			& = \sum_{i} m_{i} \, v_{i}		& conservation of momentum\\
 	\Delta p	& = F \Delta t & ~\\
-	E_{\text{k}}	& = \int p \, dv & ~\\
+	E_{\text{k}}	& = \int p \, \partial v & ~\\
 \end{formulatable}
+
 \section{Electricity\index{Electromagnetism}}
 \begin{formulatable}
 	\toprule
@@ -309,7 +312,7 @@ sorting=ynt
 	V		& = \frac{E}{q} = \vec{\mathbf E} d		& ~\\
 	\formulatableheading{}
 	\midrule
-	\formulatableheading{Radial symetric field\index{Elecromagnetism!Electrostatics!Radial symetric field}}
+	\formulatableheading{Radial symetric field\index{Electromagnetism!Electrostatics!Radial symetric field}}
 	\midrule
 	U		& = - \frac{1}{4 \pi \varepsilon_{0} \varepsilon_{r}} Qq \left( \frac{1}{r_{1}} - \frac{1}{r_{2}} \right)
 									& ~\\
@@ -319,6 +322,19 @@ sorting=ynt
 	\mathbf E	& = \frac{\vec{F}}{q} = \frac{1}{4 \pi \varepsilon_{0} \varepsilon{r}} \frac{Q}{r^{2}} \hat r
 									& ~\\
 	\varepsilon_{0}	& = \frac{\sigma}{\varepsilon_{r} \mathbf E}	& const.\\
+	\midrule
+	\formulatableheading{Coil\index{Electromagnetism!magnetism!coil}}
+	\midrule
+	L		& = \frac{\Phi}{I} = -\mu_0 \mu_r \frac{n^{2}A}{l}
+									& ~\\
+	{\mathcal {E}}	& = -L \dot I					& ~\\
+	B		& = \mu_0 \mu_r \frac{n}{l} I			& Magnetic flux density inside a coil\\
+	V_L		& = -n \dot \Phi				& Electric potential of a coil when the magnetic field or the area interfused by the field changes\\
+	V_L		& = V_0 e^{ -\frac{R}{L}t}			& Electric potential of a coil when direct current is switched on\\
+	V_R		& = V_0 \left( 1 - e^{- \frac{R}{L}t} \right)	& Electric potential of an ohmic resistance when direct current is switched on\\
+	V_L		& = -V_0 e^{- \frac{R}{L}t}			& Electric potential of a coil when direct current is switched off\\
+	V_R		& = V_0 e^{- \frac{R}{L}t}			& Electric potential of an ohmic resistance when direct current is switched off\\
+	\bottomrule
 \end{formulatable}
 
 \newpage
@@ -338,7 +354,8 @@ sorting=ynt
 	electric resistance	& ohm\index{Units!ohm}		& \unit{\ohm}		& = \unit{\per\cubic\second\square\metre\kilogram\square\ampere}			& {\mathsf{T^{-3}\;L^{2}\;M\;I^{-2}}}\\
 	pressure, stress	& pascal\index{Units!pascal}	& \unit{\pascal}	& = \unit{\newton\per\metre} = \unit{\per\square\second\per\metre\kilogram}		& {\mathsf{T^{-2}\;L^{-1}\;M}}\\
 	plane angle		& radian\index{Units!radian}	& \unit{\radian}	& = \unit{\metre\per\metre}								& {\mathsf{}}\\
-	magnetic flux		& weber\index{Units!weber}	& \unit{\tesla}		& = \unit{\weber\per\square\metre} = \unit{\per\square\second\kilogram\per\ampere}	& {\mathsf{T^{-2}\;M\;I^{-1}}}\\
+	magnetic flux		& weber\index{Units!weber}	& \unit{\weber}		& = \unit{\volt\second} = \unit{\per\square\second\square\metre\kilogram\per\ampere}	& {\mathsf{T^{-2}\;L^{2}\;M\;I}}\\
+	magnetic flux density	& tesla\index{Unit!tesla}	& \unit{\tesla}		& = \unit{\weber\per\square\metre} = \unit{\per\square\second\kilogram\per\ampere}	& {\mathsf{T^{-2}\;M\;I^{-1}}}\\
 	electric potential difference, electromotive force
 				& volt\index{Units!volt}	& \unit{\volt}		& = \unit{\watt\per\ampere} = \unit{\kilogram\square\metre\per\cubic\second\per\ampere}	& {\mathsf {T^{-3}\;L^{2}\;M\;I^{-1}}}\\
 	power, radiant flux	& watt\index{Units!watt}	& \unit{\watt}		& = \unit{\joule\per\second} = \unit{\per\cubic\second\square\metre\kilogram}		& {\mathsf{T^{-3}\;L^{2}\;M}}\\
