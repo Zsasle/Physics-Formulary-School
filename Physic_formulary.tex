@@ -35,6 +35,7 @@
 \usepackage{amsfonts}
 \usepackage{array}
 \usepackage{mathrsfs}
+\usepackage{calc}
 %\usepackage{physics}
 \usepackage[version=4]{mhchem}
 \usepackage{chemfig}
@@ -56,9 +57,10 @@
 }
 \DeclareSIUnit\clight{{\mathrm{c}_{\text{0}}}}
 \DeclareSIUnit\atomicmassunit{\mathrm{u}}
-\usepackage{framed}
-\usepackage{xcolor}
-\usepackage{pgfplots, pgfplotstable}
+%\usepackage{framed}
+%\usepackage{xcolor}
+%\usepackage{pgfplots, pgfplotstable}
+%\pgfplotsset{compat=1.18}
 \usepackage{booktabs}
 %\usepackage{parskip}
 \usepackage{float}
@@ -68,6 +70,9 @@
 \usepackage{imakeidx}
 \usepackage{url}
 \usepackage{tabulary}
+\usepackage{longtable}
+\usepackage{ltxtable, environ, etoolbox}
+\newwrite\mytabularwrite
 \usepackage[
 backend=biber,
 style = nature,
@@ -93,6 +98,7 @@ sorting=ynt
 }
 %\usepackage{overcite}
 \usepackage{hyperref}
+\usepackage{csquotes}
 \usepackage{blindtext}
 \usepackage{tikz}
 \setlength{\headheight}{1,5cm}
@@ -116,19 +122,40 @@ sorting=ynt
 
 %\setlength\extrarowheight{8pt}
 \renewcommand{\arraystretch}{1.25}
-\newenvironment{formulatable}{%
-	\begingroup%
-	\setlength{\tabcolsep}{0pt}%
-	\centering
-	\tabularx{\textwidth}{%
-		>{\hsize = 0.75\hsize\raggedleft\arraybackslash\begin{math}} X <{\:\end{math}}%
-			>{\hsize = 0.75\hsize\raggedright\arraybackslash\begin{math}} X <{\end{math}}%
-				>{\hsize = 1.50\hsize\raggedright\arraybackslash\:}X%
-	}%
-}{%
-	\endtabularx%
-	\endgroup%
-}
+%\newenvironment{formulatable}{%
+%	\begingroup%
+%	\setlength{\tabcolsep}{0pt}%
+%	\centering
+%	\tabularx{\textwidth}{%
+%		>{\hsize = 0.75\hsize\raggedleft\arraybackslash\begin{math}} X <{\:\end{math}}%
+%			>{\hsize = 0.75\hsize\raggedright\arraybackslash\begin{math}} X <{\end{math}}%
+%				>{\hsize = 1.50\hsize\raggedright\arraybackslash\:}X%
+%	}%
+%}{%
+%	\endtabularx%
+%	\endgroup%
+%}
+
+\NewEnviron{formulatable}[1]{%
+	\immediate\openout\mytabularwrite=\jobname-ltxtable.tex
+	\immediate\write\mytabularwrite{%
+		\unexpanded{%
+			\begingroup
+			\setlength{\tabcolsep}{0pt}%
+			\centering
+			\begin{longtable}
+				{>{\raggedleft\arraybackslash\begin{math}} p{0.25\textwidth} <{\:\end{math}}%
+					>{\raggedright\arraybackslash\begin{math}} p{0.25\textwidth} <{\end{math}}%
+						>{\raggedright\arraybackslash\:} p{0.5\textwidth}}%
+						}%
+						}%
+				\immediate\write\mytabularwrite{\unexpanded\expandafter{\BODY}}%
+			\immediate\write\mytabularwrite{\unexpanded{\end{longtable}\endgroup}}%
+			\immediate\closeout\mytabularwrite
+			}%
+			\AfterEndEnvironment{formulatable}{\LTXtable{\textwidth}{\jobname-ltxtable.tex}}
+
+
 \newcommand{\formulatableheading}[1]{\multicolumn{3}{c}{#1}\\}
 
 \makeindex[intoc = true, options = {-s Physic_formulary.ist}]
@@ -204,7 +231,7 @@ sorting=ynt
 
 \newpage
 \section{Energy\index{Energy}}
-\begin{formulatable}
+\begin{formulatable}{Energy}
 	\toprule
 	\formulatableheading{Kinetic Energy\index{Energy!Kinetic Energy}}
 	\midrule
@@ -223,7 +250,7 @@ sorting=ynt
 \end{formulatable}
 
 \section{Motion\index{motion}}
-\begin{formulatable}
+\begin{formulatable}{Motion}
 	\toprule
 	\multicolumn{3}{c}{uniform linear motion\index{motion!uniform linear motion}}\\
 	\midrule
@@ -248,7 +275,7 @@ sorting=ynt
 \end{formulatable}
 
 \section{Momentum\index{Momentum}}
-\begin{formulatable}
+\begin{formulatable}{Momentum}
 	\toprule
 	\multicolumn{3}{c}{momentum itself}\\
 	\midrule
@@ -267,7 +294,7 @@ sorting=ynt
 \end{formulatable}
 
 \section{Electricity\index{Electromagnetism}}
-\begin{formulatable}
+\begin{formulatable}{Electricity}
 	\toprule
 	\multicolumn{3}{c}{General}\\
 	\midrule
@@ -280,7 +307,7 @@ sorting=ynt
 \newpage
 \section{Fields}
 \subsection{Newtonian gravitation\index{Gravitation}}
-\begin{formulatable}
+\begin{formulatable}{Newtonian-gravitation}
 	\toprule
 	\multicolumn{3}{c}{Homogeneous field\index{Gravitation!Homogeneous Field}}\\
 	\midrule
@@ -301,7 +328,7 @@ sorting=ynt
 									& ~\\
 \end{formulatable}
 \subsection{Electromagnetism\index{Electromagnetism}\index{Electromagnetism!Electrostatics}}
-\begin{formulatable}
+\begin{formulatable}{Electromagnetism}
 	\toprule
 	\formulatableheading{homogenous field\index{Electromagnetism!Electrostatics!Homogenous field}}
 	\midrule
@@ -323,11 +350,29 @@ sorting=ynt
 									& ~\\
 	\varepsilon_{0}	& = \frac{\sigma}{\varepsilon_{r} \mathbf E}	& const.\\
 	\midrule
+	\formulatableheading{Capacitor\index{Electromagnetism!Electrostatics!Capacitor}}
+	\midrule
+	C		& = \frac{Q}{V} = \varepsilon_0\varepsilon_r \frac{A}{d}
+									& Capcitance\\
+	E		& = \frac{1}{2} C U^{2}				& Energy of Capacitor\\
+	E		& = \frac{1}{2} \varepsilon_0\varepsilon_r V \vec{\mathbf E}^{2}
+									& ~\\
+	Q\left( t \right)
+			& = Q_0 e^{- \frac{1}{RC}t}			& Charge at time t, while charging\\
+	I\left( t \right)
+			& = - \frac{Q_0}{RC} e^{- \frac{1}{RC} t}	& Current at time t, while charging\\
+	I\left( t \right)
+			& = - I_0 e^{- \frac{1}{RC} t}			& ~\\
+	V\left( t \right)
+			& = \frac{Q_0}{C} e^{- \frac{1}{RC} t}		& Voltage at time t, while charging\\
+	V\left( t \right)
+			& = V_0 e^{- \frac{1}{RC} t}			& ~\\
+	\midrule
 	\formulatableheading{Coil\index{Electromagnetism!magnetism!coil}}
 	\midrule
 	L		& = \frac{\Phi}{I} = -\mu_0 \mu_r \frac{n^{2}A}{l}
-									& ~\\
-	{\mathcal {E}}	& = -L \dot I					& ~\\
+									& Inductance\\
+	{\mathcal {E}}	& = -L \dot I					& Induced Voltage\\
 	B		& = \mu_0 \mu_r \frac{n}{l} I			& Magnetic flux density inside a coil\\
 	V_L		& = -n \dot \Phi				& Electric potential of a coil when the magnetic field or the area interfused by the field changes\\
 	V_L		& = V_0 e^{ -\frac{R}{L}t}			& Electric potential of a coil when direct current is switched on\\
